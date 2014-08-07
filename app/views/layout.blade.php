@@ -33,8 +33,10 @@
 			    		<li class="dropdown">
 				           	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <span class="caret"></span></a>
 				            <ul class="dropdown-menu" role="menu">
+				            	<li><a href="/problem/create">Add Problem</a></li>
 				              	<li><a href="/problem">Problems</a></li>
 				               	<li class="divider"></li>
+				               	<li><a href="/user">Add User</a></li>
 				    			<li><a href="/user">Users</a></li>
 				            </ul>
 	            		</li>

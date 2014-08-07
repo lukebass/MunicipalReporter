@@ -2,7 +2,6 @@
 
 @section('content')
 	<div class="container top-margin">
-		<a href="/problem/create" class="btn btn-primary align-right" role="button"><span class="glyphicon glyphicon-plus"></span> Problem</a>
 		<table class="table table-striped">
 	     	<thead>
 	        	<tr>
