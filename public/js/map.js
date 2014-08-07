@@ -6,7 +6,9 @@ $(document).ready(function() {
     var options = {
 		center: new google.maps.LatLng(54.305, -130.305),
 		zoom: 13,
-		streetViewControl: false
+		panControl: false,
+		streetViewControl: false,
+		mapTypeControl: false
 	};
 
 	map = new google.maps.Map(document.getElementById("map"), options);
@@ -31,7 +33,7 @@ function createMarker(mark)
 		map: map
 	});
 
-	var content = '<div class=content><p><strong>'+mark.problem+'</strong></p><p>'+mark.comments+'</p><p class=last-group><a href=marker/'+mark.id+'>View</a></p></div>';
+	var content = '<div class=content><p><strong>'+mark.type+'</strong></p><p>'+mark.comments+'</p><p class=last-group><a href=marker/'+mark.id+'>View</a></p></div>';
 
 	google.maps.event.addListener(marker, 'click', function(e) {
 		if(info) {

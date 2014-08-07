@@ -4,7 +4,8 @@ class HomeController extends BaseController {
 
 	public function getIndex()
 	{
-		return View::make('home/index');
+		$problems = Problem::lists('type', 'type');
+		return View::make('home/index')->with('problems', $problems);
 	}
 
 	public function postIndex()

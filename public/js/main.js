@@ -6,7 +6,9 @@ $(document).ready(function() {
     var options = {
 		center: new google.maps.LatLng(54.305, -130.305),
 		zoom: 13,
-		streetViewControl: false
+		panControl: false,
+		streetViewControl: false,
+		mapTypeControl: false
 	};
 
 	map = new google.maps.Map(document.getElementById("map"), options);

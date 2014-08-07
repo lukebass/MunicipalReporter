@@ -28,6 +28,15 @@ form {
 	width: 100%; 
 }
 
+#mapette {
+	height: 300px;
+	width: 100%;
+}
+
+.panel {
+	margin-bottom: 30px;
+}
+
 .container-success {
 	position: absolute;
 	top: 80px;

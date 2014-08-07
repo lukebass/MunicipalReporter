@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container-fluid full-fluid">
-		<div id="map"/>
+		<div id="map"></div>
 	</div>
 
 	@if(Session::has('success'))
@@ -36,7 +36,7 @@
 	      		<div class="modal-body">
 					<div class="form-group">
 						{{ Form::label('type', 'Type of Problem') }}
-						{{ Form::select('type', array('Animal Control' => 'Animal Control', 'Graffiti' => 'Graffiti', 'Litter' => 'Litter', 'Parking' => 'Parking', 'Road Conditions' => 'Road Conditions', 'Sidewalk Conditions' => 'Sidewalk Conditions', 'Street Lights' => 'Street Lights', 'Street Signs' => 'Street Signs', 'Traffic Signals' => 'Traffic Signals', 'Unsightly Property' => 'Unsightly Property', 'Waste Collection' => 'Waste Collection', 'Water Quality' => 'Water Quality'), null, array('class' => 'form-control')) }}
+						{{ Form::select('type', $problems, null, array('class' => 'form-control')) }}
 					</div>
 					<div class="form-group">
 						{{ Form::label('name', 'Full Name') }}
