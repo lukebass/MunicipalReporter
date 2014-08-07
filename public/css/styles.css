@@ -1,0 +1,95 @@
+html {
+	height: 100%;
+}
+
+body {
+	padding-top: 50px;
+	height: 100%;
+}
+
+h3 {
+	margin-top: 10px;
+}
+
+form {
+	margin-bottom: 0;
+}
+
+.container-fluid {
+	height: 100%;
+}
+
+.full-fluid {
+	padding: 0;
+}
+
+#map { 
+	height: 100%; 
+	width: 100%; 
+}
+
+.container-success {
+	position: absolute;
+	top: 80px;
+	width: 100%;
+}
+
+.container-info {
+	position: absolute;
+	top: 80px;
+	width: 100%;
+	display: none;
+}
+
+.alert-home {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.max-width-sm {
+	max-width: 400px;
+}
+
+.max-width-lg {
+	max-width: 600px;
+}
+
+.modal-dialog {
+	margin: 80px auto;
+}
+
+.margin-lg {
+	margin-bottom: 15px;
+}
+
+.last-group {
+	margin-bottom: 0;
+}
+
+.save-btn {
+	position: absolute;
+	bottom: 79px;
+	width: 100%;
+	text-align: center;
+	display: none;
+}
+
+.loc-btn {
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+	text-align: center;
+}
+
+.content {
+	padding: 10px;
+}
+
+.top-margin {
+	margin-top: 30px;
+}
+
+.align-right {
+	float: right;
+}
