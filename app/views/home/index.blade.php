@@ -1,41 +1,6 @@
 @extends('layout')
 
 @section('content')
-	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-		    <div class="navbar-header">
-		    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			    </button>
-			    <a class="navbar-brand" href="/">City of Prince Rupert</a>
-		    </div>
-		    <div class="collapse navbar-collapse" id="navbar-collapse">
-		    @if(Auth::user())
-		    	<ul class="nav navbar-nav">
-		    		<li><a href="/map">Map</a></li>
-		    		<li><a href="/list">List</a></li>
-		    		<li><a href="/user/{{ Auth::user()->id }}">Account</a></li>
-		    		@if(Auth::user()->admin)
-		    		<li class="dropdown">
-			           	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <span class="caret"></span></a>
-			            <ul class="dropdown-menu" role="menu">
-			              	<li><a href="/problem">Problems</a></li>
-			               	<li class="divider"></li>
-			    			<li><a href="/user">Users</a></li>
-			            </ul>
-            		</li>
-		    		@endif
-		    	</ul>
-		    	<a href="/logout" class="btn btn-primary navbar-btn navbar-right" role="button">Logout</a>
-		    @else
-		    	<a href="/login" class="btn btn-primary navbar-btn navbar-right" role="button">Login</a>
-		    @endif
-			</div>
-      	</div>
-	</div>
-
 	<div class="container-fluid full-fluid">
 		<div id="map"/>
 	</div>
@@ -52,7 +17,7 @@
 	@endif
 
 	<div class="container container-info">
-		<div class="alert alert-info alert-home">
+		<div class="alert alert-warning alert-home">
 			<button type="button" class="close" data-dismiss="alert">
 				<span aria-hidden="true">×</span>
 			</button>
@@ -60,12 +25,12 @@
 		</div>
 	</div>
 
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="markerModal" tabindex="-1" role="dialog" aria-labelledby="markerModal" aria-hidden="true">
 	  	<div class="modal-dialog">
 	    	<div class="modal-content">
 	      		<div class="modal-header">
-	        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        		<h4 class="modal-title" id="myModalLabel">Report a Problem</h4>
+	        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	        		<h4 class="modal-title" id="markerModal">Report a Problem</h4>
 	      		</div>
 	      		{{ Form::open() }}
 	      		<div class="modal-body">
@@ -97,11 +62,11 @@
 	</div>
 
 	<div class="save-btn">
-		<button class="btn btn-danger" onclick="getLoc()" data-toggle="modal" data-target="#myModal">Save Position</a>
+		<button class="btn btn-danger" onclick="getLoc()" data-toggle="modal" data-target="#markerModal">Save Position</button>
 	</div>
 
 	<div class="loc-btn">
-		<button class="btn btn-primary" onclick="currentLoc()">Current Location</a>
+		<button class="btn btn-primary" onclick="currentLoc()">Current Location</button>
 	</div>
 
 	{{ HTML::script('js/main.js') }}
