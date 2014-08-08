@@ -35,18 +35,18 @@ class HomeController extends BaseController {
 		);
 
 		$data = array(
-			'type'	   => $type,
-			'name'	   => $name,
-			'email'    => $email,
+			'type' => $type,
+			'name' => $name,
+			'email' => $email,
 			'comments' => $comments,
-			'id'       => $marker->id
+			'id' => $marker->id
 		);
 
 		Mail::send('emails/report', $data, function($message) use ($content) {
         	$message->to($content['email'])->subject($content['subject']);
     	});
 
-		return Redirect::to('/')->with('success', true);
+		return Redirect::to('/');
 	}
 
 }

@@ -20,7 +20,6 @@ $(document).ready(function() {
 
 function placeMarker(pos)
 {	
-	$(".container-info").show();
     $(".save-btn").show();  
 
     if(marker) {

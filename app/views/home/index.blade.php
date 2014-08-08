@@ -5,23 +5,12 @@
 		<div id="map"></div>
 	</div>
 
-	@if(Session::has('success'))
-	<div class="container container-success">
-		<div class="alert alert-success alert-home">
-			<button type="button" class="close" data-dismiss="alert">
-				<span aria-hidden="true">×</span>
-			</button>
-			<strong>Success:</strong> Your report has been submitted.
-		</div>
-	</div>
-	@endif
-
-	<div class="container container-info">
+	<div class="container container-home">
 		<div class="alert alert-warning alert-home">
 			<button type="button" class="close" data-dismiss="alert">
 				<span aria-hidden="true">×</span>
 			</button>
-			<strong>Notification:</strong> To save click the button below.
+			<strong>Info:</strong> Click on the map to place and move your marker. Once you're satisfied, click the "Save Position" button. Alternatively, you can use your current location.
 		</div>
 	</div>
 
