@@ -2,18 +2,6 @@
 
 class LoginController extends BaseController {
 
-	public function getIndex()
-	{
-		if(Auth::check())
-		{
-			return Redirect::to('/map');
-		}
-		else
-		{
-			return View::make('login/index');
-		}
-	}
-
 	public function postIndex()
 	{
 		$user = array(
@@ -23,7 +11,7 @@ class LoginController extends BaseController {
 
 		if(Auth::attempt($user))
 		{
-			return Redirect::to('/map');
+			return Redirect::to('/');
 		}
 		else
 		{

@@ -26,6 +26,26 @@ class HomeController extends BaseController {
 		$marker->comments = $comments;
 		$marker->save();
 
+		$problem = Problem::where('type', '=', $type)->first();
+		$user = User::where('username', '=', $problem->username)->first();
+
+		$content = array(
+			'email' => (string) $user->email,
+			'subject' => 'Municipal Reporter: New Problem Reported'
+		);
+
+		$data = array(
+			'type'	   => $type,
+			'name'	   => $name,
+			'email'    => $email,
+			'comments' => $comments,
+			'id'       => $marker->id
+		);
+
+		Mail::send('emails/report', $data, function($message) use ($content) {
+        	$message->to($content['email'])->subject($content['subject']);
+    	});
+
 		return Redirect::to('/')->with('success', true);
 	}
 

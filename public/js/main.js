@@ -4,8 +4,8 @@ var marker;
 $(document).ready(function() {
     
     var options = {
-		center: new google.maps.LatLng(54.305, -130.305),
-		zoom: 13,
+		center: new google.maps.LatLng(54.310, -130.310),
+		zoom: 14,
 		panControl: false,
 		streetViewControl: false,
 		mapTypeControl: false

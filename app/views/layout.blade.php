@@ -25,7 +25,7 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="navbar-collapse">
 			    @if(Auth::user())
-			    	<ul class="nav navbar-nav">
+			    	<ul class="nav navbar-nav navbar-right">
 			    		<li><a href="/map">Map</a></li>
 			    		<li><a href="/list">List</a></li>
 			    		<li><a href="/assigned">My Problems</a></li>
@@ -36,22 +36,23 @@
 				            	<li><a href="/problem/create">Add Problem</a></li>
 				              	<li><a href="/problem">Problems</a></li>
 				               	<li class="divider"></li>
-				               	<li><a href="/user">Add User</a></li>
+				               	<li><a href="/user/create">Add User</a></li>
 				    			<li><a href="/user">Users</a></li>
 				            </ul>
 	            		</li>
 			    		@endif
+			    		<li class="dropdown">
+				           	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->username }} <span class="caret"></span></a>
+				            <ul class="dropdown-menu" role="menu">
+				            	<li><a href="/user/{{ Auth::user()->id }}">My Account</a></li>
+								<li><a href="/logout">Logout</a></li>
+				            </ul>
+	            		</li>
 			    	</ul>
-			    	<div class="btn-group navbar-btn navbar-right">
-					  	<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->username }} <span class="caret"></span></button>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="/user/{{ Auth::user()->id }}">My Account</a></li>
-							<li class="divider"></li>
-						    <li><a href="/logout">Logout</a></li>
-						</ul>
-					</div>
 			    @else
-			    	<button class="btn btn-primary navbar-btn navbar-right" onclick="getLoc()" data-toggle="modal" data-target="#loginModal">Login</button>
+			    	<ul class="nav navbar-nav navbar-right">
+			    		<li><a href="#" onclick="getLoc()" data-toggle="modal" data-target="#loginModal">Login</a></li>
+			    	</ul>
 			    @endif
 				</div>
 	      	</div>
@@ -62,7 +63,7 @@
 		    	<div class="modal-content">
 		      		<div class="modal-header">
 		        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		        		<h4 class="modal-title" id="loginModal">Login</h4>
+		        		<h3 class="modal-title" id="loginModal">Login</h3>
 		      		</div>
 		      		{{ Form::open(array('url' => 'login')) }}
 		      		<div class="modal-body">

@@ -57,6 +57,19 @@ class UserController extends BaseController {
 		$user->password = Hash::make($password);
 		$user->save();
 
+		$content = array(
+			'email' => (string) $email,
+			'subject' => 'Municipal Reporter: New Account Created'
+		);
+
+		$data = array(
+			'username' => $username
+		);
+
+		Mail::send('emails/welcome', $data, function($message) use ($content) {
+        	$message->to($content['email'])->subject($content['subject']);
+    	});
+
 		return Redirect::to('/user/' . $user->id)->with('createSuccess', true);
 	}
 

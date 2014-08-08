@@ -6,8 +6,6 @@
 	     	<thead>
 	        	<tr>
 		          	<th>Type</th>
-		          	<th>Name</th>
-		          	<th>Email</th>
 		          	<th>Assigned</th>
 		          	<th>Created</th>
 		          	<th>View</th>
@@ -17,8 +15,6 @@
 	        	@foreach($markers as $marker)
 	        	<tr>
 	        		<td>{{ $marker->type }}</td>
-	        		<td>{{ $marker->name }}</td>
-	        		<td>{{ $marker->email }}</td>
 	        		<td>{{ $marker->username }}</td>
 	        		<td>{{ $marker->created_at }}</td>
 	        		<td><a href="/marker/{{ $marker->id }}">View</a></td>
