@@ -8,6 +8,6 @@
 		<p>Name: {{ $name }}</p>
 		<p>Email: {{ $email }}</p>
 		<p>Comments: {{ $comments }}</p>
-		<p><a href="report.princerupert.ca/marker/{{ $id }}">View</a></p>
+		<p><a href="http://report.princerupert.ca/marker/{{ $id }}">View</a></p>
 	</body>
 </html>
